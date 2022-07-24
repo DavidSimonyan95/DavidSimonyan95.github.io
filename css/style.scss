@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+*{
+  font-family: 'Nunito', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap:20px;
+}
+
+$red:#f00;
+$black : #000;
+$white : #fff;
+$light-white:rgb(37, 33, 33);
+$light-bg:#111;
+body{
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  overflow-x: hidden;
+  background:$black;
+ 
+
+  &::-webkit-scrollbar{
+    width: 10px;
+  }
+  
+  &::-webkit-scrollbar-track{
+    background: $black;
+  }
+  
+  &::-webkit-scrollbar-thumb{
+    background: $red;
+  }
+}
+
+section{
+  padding:4% 9%;
+}
+
+.btn{
+  display: inline-block;
+  padding:13px 28px;
+  background:linear-gradient(130deg, $red 93%, transparent 90%);
+  color:$white;
+  cursor: pointer;
+  font-size: 20px;
+  &:hover{
+    transform:scale(1.1);
+  }
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top:0; left:0; right:0;
+    padding:20px;
+    z-index: 10000;
+    background: $black;
+  .logostart{      
+    .logo{
+       font-weight: bolder;
+       color:$white;
+       font-size: 30px;
+       span{
+           color:$red;
+        }
+      }
+      #musicPlay{
+        font-size: 33px;
+        cursor: pointer;
+        color: white;
+        margin-left: 20px;
+      }
+      #musicPause{
+         font-size: 33px;
+         cursor: pointer;
+         color: $red;
+
+      }
+        
+  }
+}
+.navbar{
+  a{
+    display: inline-block;
+    padding:15px;
+    font-size: 19px;
+    color:$white;
+    &:hover{
+        background: $red;
+    }
+  }
+         
+} 
+.iconnavbar{
+ background: -webkit-linear-gradient(70deg,#8DA399 0%, rgb(208, 162, 145) 42%, #FF0000 70%, rgba(5,49,73,1) 100%);
+ width: 100px;
+ border-radius: 8px;
+ text-align: center;
+ animation:pulse 1s infinite;
+ 
+
+  #moon{
+   font-size: 20px;
+   color:blue;
+   cursor: pointer;
+   margin: 0 10px;
+
+  
+  }
+  #sun{
+  font-size: 20px;
+  color:yellow;
+  cursor: pointer;
+  margin: 0 10px;
+  }
+}
+#menu-btn{
+  font-size: 28px;
+  color:$white;
+  cursor: pointer;
+  display: none;
+}
+.home{
+  padding:0;
+  .homeImg{
+    background-image: url(https://image.boxrox.com/2022/02/Man-Flexing.png);
+    min-height:100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding:0 4%;
+    display: flex;
+    align-items: center;
+
+    .content{
+      width: 100%;
+    span{
+      font-size: 27px;
+      color:$red;
+      display: block;
+    }
+    h3{
+      font-size: 32px;
+      color:$black;
+      padding:15px 0;
+    }
+    }
+  }
+}
+.about{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .contentAbout{
+    text-align: center;
+
+    span{
+      font-size: 30px;
+      animation: infinte flash;
+      color:$red;
+    }
+    .title{
+      font-size: 26px;
+      color:$white;
+    }
+    p{
+      font-size: 18px;
+      color:$light-white;
+      padding:15px 0;
+      line-height: 2;
+    }
+
+    .box-container{
+      display: flex;
+      flex-wrap: wrap;
+      gap:30px;
+      margin-top: 17px;
+       .box{
+        flex:1;
+
+        h3{
+          font-size: 22px;
+          color:$white;
+
+          i{
+            padding-right: 5px;
+            color:$red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.features .heading {
+  text-align: center;
+  padding: 25px;
+  span{
+    font-size: 30px;
+    color:$red;
+  }
+}
+.features .box-container{
+  @include grid(200px);
+  .box{
+    background: $light-bg;
+
+    &.second{
+      display: flex;
+      flex-flow: column-reverse;
+    }
+
+    &:hover .image img{
+      transform: scale(1.1);
+    }
+    .image{
+      width: 100%;
+      height: 44vh;
+      overflow:hidden;
+
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .content{
+      padding: 20px;
+      text-align: center;
+      h3{
+        font-size: 25px;
+        color:$red;
+      }
+      p{
+        line-height: 2;
+        font-size: 18px;
+        color:$light-white;
+        padding:10px 0;
+      }
+    }
+  }
+}
+.pricing{
+  @include grid(200px);
+  .information{
+    span{
+      text-align: center;
+      font-size: 30px;
+      color:$red;
+    }
+    h3{
+      font-size: 31px;
+      padding-top: 10px;
+      color:$white;
+    }
+    p{
+      line-height: 1.5;
+      padding:  10px 0;
+      font-size: 18px;
+      color:$light-white;
+    i{
+        padding-right: 10px;
+        color: $red;
+      }
+    }
+  }
+  .plan{
+    text-align: center;
+    padding:16px;
+    &.basic{
+       background:linear-gradient(130deg,  $light-bg 93%, transparent 90%);
+    }
+    h3{
+      font-size: 31px;
+      margin:20px 0;
+      color:$white;
+    }
+    .price{
+      font-size: 31px;
+      font-weight: bolder;
+      color:$red;
+      span{
+        color:$white;
+      }
+    }
+    .list{
+      padding:20px 0;
+      p{
+        line-height: 1.5;
+        padding:10px 0;
+        font-size: 18px;
+        color:$light-white;
+        i{
+        color: $red;
+        padding-right: 10px;
+        }
+      }
+    }
+  }
+}
+.trainers .heading{
+  text-align: center;
+  padding: 20px;
+  span{
+    font-size: 30px;
+    color:$red;
+  }
+}
+.trainers .box-container{
+  @include grid(80px);
+  .box{
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+    &:hover .content{
+      transform: translateY(0);
+    }
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .content{
+      position: absolute;
+      bottom: 0; left:0; right:0;
+      background: $light-bg;
+      padding:10px;
+      transform: translateY(65px);
+      span{
+        font-size: 18px;
+        color:$red;
+      }
+      h3{
+        font-size: 16px;
+        color:$white;
+        padding-top:10px;
+      }
+      .share{
+        padding-top: 35px;
+        margin-top: 3px;
+        border-top: 1px solid $light-white;
+        a{
+          font-size: 22px;
+          color:$white;
+          margin-right: 16px;
+          &:hover{
+            color:$red;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.footer{
+
+  .box-container{
+    @include grid(240px);
+
+    .box{
+
+      h3{
+        font-size: 22px;
+        color:$white;
+        padding:14px 0;
+      }
+
+      .links{
+        font-size: 22px;
+        display: block;
+        color:$light-white;
+        padding:15px 0;
+
+        &:hover{
+          color:$red;
+        }
+      }
+
+      p{
+        font-size: 20px;
+        color:$light-white;
+        padding:18px 0;
+
+        i{
+          font-size: 15px;
+          padding-right: 5px;
+          color:$red;
+        }
+      }
+
+      .share{
+        padding:15px 0;
+
+        a{
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
+          font-size: 18px;
+          color:$white;
+          background: $light-bg;
+          border-radius: 50%;
+          margin: right 5px;;
+          text-align:center;
+
+          &:hover{
+            background: $red;
+          }
+        }
+      }
+
+      form{
+
+        .email{
+          margin-bottom:16px;
+          width: 100%;
+          background: $light-bg;
+          padding:21px;
+          font-size: 18px;
+          color:$white;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}
+.credit{
+  font-size: 18px;
+  text-align:center;
+  padding:25px;
+  color:$white;
+  background: $light-bg;
+  line-height: 1;
+
+  span{
+    color:$red;
+  }
+}
+
+
+
+@media (max-width:991px){
+ .header{
+  .navbar a{
+    font-size: 17px;
+    padding: 7px;
+  }
+ }
+ .home{
+  .homeImg{
+    .content{
+      h3{
+        font-size: 22px;
+      }
+    }
+  }
+ }
+ .about{
+  .contentAbout{
+    .title{
+      font-size: 25px;
+    }
+    p{
+      font-size: 16px;
+    }
+    .box-container{
+      margin-top: 12px;
+      .box{
+        h3{
+          font-size: 19px;
+        }
+        i{
+          font-size: 16px;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+ }
+ .features .box-container .box.second{
+  flex-flow: column;
+}
+.pricing{
+  display: block;
+}
+
+
+.footer{
+
+  .box-container{
+    @include grid(220px);
+
+    .box{
+
+      h3{
+        font-size: 16px;
+        color:$white;
+        padding:7px 0;
+      }
+
+      .links{
+        font-size: 12px;
+        display: block;
+        color:$light-white;
+        padding:7px 0;
+
+        &:hover{
+          color:$red;
+        }
+      }
+
+      p{
+        font-size: 13px;
+        color:$light-white;
+        padding:9px 0;
+
+        i{
+          padding-right: 2px;
+          color:$red;
+        }
+      }
+
+      .share{
+        padding:8px 0;
+
+        a{
+          height: 28px;
+          width: 28px;
+          line-height: 28px;
+          font-size: 12px;
+          color:$white;
+          background: $light-bg;
+          border-radius: 50%;
+          margin: right 2px;;
+          text-align:center;
+
+          &:hover{
+            background: $red;
+          }
+        }
+      }
+
+      form{
+
+        .email{
+          margin-bottom:8px;
+          width: 100%;
+          background: $light-bg;
+          padding:16px;
+          font-size: 11px;
+          color:$white;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}
+}
+@media (max-width:768px){
+  #menu-btn{
+      display: inline-block;
+  
+      &.fa-times{
+        transform: rotate(180deg);
+      }
+    }  
+    .header{
+      .navbar{
+        position: absolute;
+        top:99%; left:0; right:0;
+        padding:0 35px;
+        background: $black;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  
+        &.active{
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        a{
+          display: block;
+          font-size: 19px;
+        }
+      }
+    }
+    .about{
+      .contentAbout{
+        
+        .box-container{
+          display: block;
+        }
+      }
+     }
+     .trainers .box-container{
+    
+      .box{
+        height: 40vh;
+        
+        .content{
+          span{
+            font-size: 14px;
+            color:$red;
+          }
+          h3{
+            font-size: 12px;
+            padding-top:10px;
+          }
+          .share{
+            padding-top: 35px;
+            margin-top: 15px;
+            a{
+              font-size: 14px;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+   
+}
+@media (max-width:470px){
+   .header{
+    
+    .logostart{
+        #musicPlay{
+            margin-left: 3px; 
+        }
+        a{
+          font-size: 25px;
+        }
+        
+    }
+    #menu-btn{
+      font-size: 18px;
+    }
+    .iconnavbar{
+      width: 60px;
+      #moon{
+        font-size: 14px;
+        margin: 0 5px;
+     
+       
+       }
+       #sun{
+       font-size: 14px;
+       margin: 0 5px;
+       }
+
+    }
+   }
+}
+  
