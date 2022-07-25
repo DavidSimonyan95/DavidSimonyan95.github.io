@@ -82,13 +82,6 @@ header{
         color: white;
         margin-left: 20px;
       }
-      #musicPause{
-         font-size: 33px;
-         cursor: pointer;
-         color: $red;
-
-      }
-        
   }
 }
 .navbar{
@@ -104,8 +97,7 @@ header{
          
 } 
 .iconnavbar{
- background: -webkit-linear-gradient(70deg,#8DA399 0%, rgb(208, 162, 145) 42%, #FF0000 70%, rgba(5,49,73,1) 100%);
- width: 100px;
+ width: 50px;
  border-radius: 8px;
  text-align: center;
  animation:pulse 1s infinite;
@@ -114,16 +106,9 @@ header{
   #moon{
    font-size: 20px;
    color:blue;
+   background-color: transparent;
    cursor: pointer;
    margin: 0 10px;
-
-  
-  }
-  #sun{
-  font-size: 20px;
-  color:yellow;
-  cursor: pointer;
-  margin: 0 10px;
   }
 }
 #menu-btn{
@@ -644,20 +629,6 @@ header{
     }
     #menu-btn{
       font-size: 18px;
-    }
-    .iconnavbar{
-      width: 60px;
-      #moon{
-        font-size: 14px;
-        margin: 0 5px;
-     
-       
-       }
-       #sun{
-       font-size: 14px;
-       margin: 0 5px;
-       }
-
     }
    }
 }
